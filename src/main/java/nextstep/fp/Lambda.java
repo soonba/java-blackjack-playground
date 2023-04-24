@@ -1,5 +1,6 @@
 package nextstep.fp;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Lambda {
@@ -39,12 +40,6 @@ public class Lambda {
     }
 
     private static int sum(List<Integer> numbers, Conditional conditional) {
-        int total = 0;
-        for (int number : numbers) {
-            if(conditional.isValid(number)) {
-                total += number;
-            }
-        }
-        return total;
+        return numbers.stream().filter(conditional::isValid).mapToInt(i -> i).sum();
     }
 }
