@@ -1,5 +1,13 @@
 ## [NEXTSTEP 플레이그라운드의 미션 진행 과정](https://github.com/next-step/nextstep-docs/blob/master/playground/README.md)
 
+- 클로버, 다이아몬드, 하트, 스페이드
+- A, 2~10, J,Q,K 의 총 56장의 카드
+- Queue 형태의 Deck
+- deck.shuffle()
+
+
+
+
 ---
 ## 학습 효과를 높이기 위해 추천하는 미션 진행 방법
 
