@@ -1,4 +1,4 @@
-package nextstep.blackjack.domain;
+package nextstep.blackjack.constants;
 
 public enum Shape {
 
