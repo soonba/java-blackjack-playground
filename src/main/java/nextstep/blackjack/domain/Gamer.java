@@ -4,13 +4,13 @@ public interface Gamer {
 
     void addCard(Card card);
 
+    String getName();
+
+    String printCards();
+
     void increaseMoney(int value);
 
     void decreaseMoney(int value);
 
-    String getName();
-
     int getAmount();
-
-    String printCards();
 }

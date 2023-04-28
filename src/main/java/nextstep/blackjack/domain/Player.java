@@ -45,7 +45,7 @@ public class Player implements Gamer {
     @Override
     public String printCards() {
         StringBuilder sb = new StringBuilder();
-        sb.append(getName()).append(": ");
+        sb.append(getName()).append("카드: ");
         hands.printCards().forEach(hand -> sb.append(hand).append(", "));
         return sb.substring(0, sb.length() - 2);
     }
