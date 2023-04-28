@@ -22,7 +22,6 @@ public class InputView {
             int bet = Integer.parseInt(br.readLine());
             playerList.add(new Player(s, bet));
         }
-        playerList.add(new Dealer());
-        return new Gamers(playerList);
+        return new Gamers(new Dealer(), playerList);
     }
 }
