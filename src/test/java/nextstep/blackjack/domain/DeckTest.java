@@ -8,10 +8,9 @@ public class DeckTest {
 
     @Test
     void 덱초기화() {
-        Deck deck = new Deck();
         int count = 0;
-        while(!deck.isEmpty()) {
-            deck.nextCard();
+        while(!Deck.isEmpty()) {
+            Deck.nextCard();
             count++;
         }
         Assertions.assertThat(count).isEqualTo(52);

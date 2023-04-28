@@ -1,18 +1,16 @@
 package nextstep.blackjack.domain;
 
+import nextstep.blackjack.constants.Shape;
+
 import java.util.*;
 
 public class Deck {
 
-    private final Queue<Card> cardQueue;
+    private static final Queue<Card> cardQueue = init();
 
-    public Deck() {
-        this.cardQueue = init();
-    }
-
-    private Queue<Card> init() {
+    private static Queue<Card> init() {
         LinkedList<Card> cardList = new LinkedList<>();
-        for (int i = 1; i <= 13; i++) {
+        for (int i = Card.MIN_CARD_VALUE; i <= Card.MAX_CARD_VALUE; i++) {
             cardList.add(new Card(Shape.CLOVER,i));
             cardList.add(new Card(Shape.HEART,i));
             cardList.add(new Card(Shape.DIAMOND,i));
@@ -22,11 +20,11 @@ public class Deck {
         return cardList;
     }
 
-    public Card nextCard() {
+    public static Card nextCard() {
         return cardQueue.poll();
     }
 
-    public boolean isEmpty() {
+    public static boolean isEmpty() {
         return cardQueue.isEmpty();
     }
 }
