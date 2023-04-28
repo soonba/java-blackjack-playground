@@ -8,7 +8,7 @@ public class Cards {
     List<Card> cards = new ArrayList<>();
 
     public int getScore() {
-        return cards.stream().mapToInt(Card::getValue).sum();
+        return cards.stream().mapToInt(Card::getScore).sum();
     }
 
     public void add(Card card) {
