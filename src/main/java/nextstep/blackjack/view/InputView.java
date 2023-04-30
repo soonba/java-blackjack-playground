@@ -3,6 +3,7 @@ package nextstep.blackjack.view;
 import nextstep.blackjack.domain.Dealer;
 import nextstep.blackjack.domain.Gamers;
 import nextstep.blackjack.domain.Player;
+import nextstep.blackjack.domain.Players;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -21,6 +22,6 @@ public class InputView {
             int bet = Integer.parseInt(br.readLine());
             playerList.add(new Player(s, bet));
         }
-        return new Gamers(new Dealer(), playerList);
+        return new Gamers(new Dealer(), new Players(playerList));
     }
 }

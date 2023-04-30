@@ -16,7 +16,8 @@ public class GamersTest {
         List<Player> players = new ArrayList<>();
         players.add(p1);
         players.add(p2);
-        Gamers players1 = new Gamers(d1, players);
+
+        Gamers players1 = new Gamers(d1, new Players(players));
         Assertions.assertThat(players1.initGameMessage().get(0)).isEqualTo("tobi");
         Assertions.assertThat(players1.initGameMessage().get(1)).isEqualTo("spring");
     }
