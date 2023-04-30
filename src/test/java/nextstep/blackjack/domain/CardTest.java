@@ -1,6 +1,6 @@
 package nextstep.blackjack.domain;
 
-import nextstep.blackjack.constants.Shape;
+import nextstep.blackjack.constants.Suit;
 import org.junit.jupiter.api.Test;
 
 import java.security.InvalidParameterException;
@@ -12,14 +12,14 @@ public class CardTest {
     @Test
     void 카드번호는_1에서_13사이() {
         assertThatThrownBy(
-                () -> {Card card = new Card(Shape.CLOVER,14);}
+                () -> {Card card = new Card(Suit.CLOVER,14);}
         ).isInstanceOf(InvalidParameterException.class);
     }
 
     @Test
     void 카드_문자변환1() {
-        Card card = new Card(Shape.HEART,13);
-        Card card2 = new Card(Shape.SPADE,1);
+        Card card = new Card(Suit.HEART,13);
+        Card card2 = new Card(Suit.SPADE,1);
         String str = card.getString();
         String str2 = card2.getString();
         assertThat(str).isEqualTo("K하트");
@@ -28,7 +28,7 @@ public class CardTest {
 
     @Test
     void 카드_문자변환2() {
-        Card card = new Card(Shape.HEART,8);
+        Card card = new Card(Suit.HEART,8);
         String str = card.getString();
         assertThat(str).isEqualTo("8하트");
     }

@@ -1,19 +1,19 @@
 package nextstep.blackjack.domain;
 
-import nextstep.blackjack.constants.Shape;
+import nextstep.blackjack.constants.Suit;
 import nextstep.blackjack.constants.StringCard;
 
 import java.security.InvalidParameterException;
 
 public class Card {
-    private final Shape shape;
+    private final Suit suit;
     private final int value;
     private final int score;
     public static final int MIN_CARD_VALUE = 1;
     public static final int MAX_CARD_VALUE = 13;
 
-    public Card(Shape shape, int number) {
-        this.shape = shape;
+    public Card(Suit suit, int number) {
+        this.suit = suit;
         this.value = validation(number);
         this.score = toScore(number);
     }
@@ -36,7 +36,7 @@ public class Card {
 
     public String getString() {
         String strValue = convertValue(this.value);
-        String strShape = shape.getName();
+        String strShape = suit.getName();
         return strValue + strShape;
     }
 
