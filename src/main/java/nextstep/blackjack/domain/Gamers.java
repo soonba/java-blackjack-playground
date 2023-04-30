@@ -33,9 +33,7 @@ public class Gamers {
         return collect;
     }
 
-    public boolean isBlackjack() {
-        if(dealer.isBlackjack()) {
-        }
+    public boolean isAnyBlackjack() {
         return true;
     }
 }

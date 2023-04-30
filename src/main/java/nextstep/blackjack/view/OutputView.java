@@ -8,7 +8,7 @@ public class OutputView {
     }
 
     public static void initErrorMessage() {
-        System.out.println("이름을 잘못 입력하였습니다.");
+        System.out.println("이름 또는 배팅을 잘못 입력하였습니다.");
     }
 
     public static void initBet(String name) {

@@ -1,5 +1,6 @@
 package nextstep.blackjack.domain;
 
+import nextstep.blackjack.constants.Denomination;
 import nextstep.blackjack.constants.Suit;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,9 +16,9 @@ public class CardsTest {
     @BeforeEach
     void setUp() {
         cards = new Cards();
-        cards.add(new Card(Suit.CLOVER, 13));
-        cards.add(new Card(Suit.CLOVER, 11));
-        cards.add(new Card(Suit.CLOVER, 1));
+        cards.add(new Card(Suit.CLOVER, Denomination.KING));
+        cards.add(new Card(Suit.CLOVER, Denomination.JACK));
+        cards.add(new Card(Suit.CLOVER, Denomination.ACE));
     }
 
     @Test
