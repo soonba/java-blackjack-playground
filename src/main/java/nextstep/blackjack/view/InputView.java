@@ -1,9 +1,8 @@
 package nextstep.blackjack.view;
 
 import nextstep.blackjack.domain.Dealer;
-import nextstep.blackjack.domain.Gamer;
-import nextstep.blackjack.domain.Player;
 import nextstep.blackjack.domain.Gamers;
+import nextstep.blackjack.domain.Player;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -16,7 +15,7 @@ public class InputView {
 
     public static Gamers initPlayer() throws Exception {
         String[] split = br.readLine().split(",");
-        List<Gamer> playerList = new ArrayList<>();
+        List<Player> playerList = new ArrayList<>();
         for (String s : split) {
             OutputView.initBet(s);
             int bet = Integer.parseInt(br.readLine());
