@@ -5,7 +5,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Cards {
-    List<Card> cards = new ArrayList<>();
+    private final List<Card> cards = new ArrayList<>();
+    public static final int BLACKJACK_BOUND = 21;
 
     public int getScore() {
         return cards.stream().mapToInt(Card::getScore).sum();
@@ -18,5 +19,17 @@ public class Cards {
     public String printCards() {
         List<String> collect = cards.stream().map(Card::getString).collect(Collectors.toList());
         return String.join(",",collect);
+    }
+
+    public boolean isBust() {
+        return cards.stream()
+                .mapToInt(Card::getScore)
+                .sum() > BLACKJACK_BOUND;
+    }
+
+    public boolean isBlackjack() {
+        return cards.stream()
+                .mapToInt(Card::getScore)
+                .sum() == BLACKJACK_BOUND;
     }
 }

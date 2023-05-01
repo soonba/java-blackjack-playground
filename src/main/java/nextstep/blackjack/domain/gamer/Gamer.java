@@ -6,22 +6,28 @@ import nextstep.blackjack.state.State;
 import nextstep.blackjack.state.running.Hit;
 
 public abstract class Gamer {
+    public static final String PRINT_JOIN_MESSAGE = "카드: ";
     protected State state;
 
     public Gamer() {
         this.state = new Hit(new Cards());
     }
 
-    void isFinished() {
-        state.isFinished();
+    public boolean isFinished() {
+        return state.isFinished();
     }
 
     public void addCard() {
-        state.cards().add(Deck.draw());
+        //카드를 추가하며 상태를 업데이트한다.
+        state = state.draw(Deck.draw());
     }
 
     public String printCards() {
-        return state.cards().printCards();
+        return getName() +
+                PRINT_JOIN_MESSAGE +
+                state.cards().printCards();
     }
+
+    public abstract String getName();
 
 }
