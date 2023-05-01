@@ -1,6 +1,6 @@
 package nextstep.blackjack.state.running;
 
-import nextstep.blackjack.domain.Cards;
+import nextstep.blackjack.domain.card.Cards;
 import nextstep.blackjack.state.Started;
 
 public abstract class Running extends Started {

@@ -1,7 +1,7 @@
 package nextstep.blackjack.state.finished;
 
-import nextstep.blackjack.domain.Card;
-import nextstep.blackjack.domain.Cards;
+import nextstep.blackjack.domain.card.Card;
+import nextstep.blackjack.domain.card.Cards;
 import nextstep.blackjack.state.Started;
 import nextstep.blackjack.state.State;
 

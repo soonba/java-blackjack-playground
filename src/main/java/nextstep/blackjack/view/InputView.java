@@ -1,9 +1,9 @@
 package nextstep.blackjack.view;
 
-import nextstep.blackjack.domain.Dealer;
-import nextstep.blackjack.domain.Gamers;
-import nextstep.blackjack.domain.Player;
-import nextstep.blackjack.domain.Players;
+import nextstep.blackjack.domain.gamer.Dealer;
+import nextstep.blackjack.domain.gamer.Gamers;
+import nextstep.blackjack.domain.gamer.Player;
+import nextstep.blackjack.domain.gamer.Players;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

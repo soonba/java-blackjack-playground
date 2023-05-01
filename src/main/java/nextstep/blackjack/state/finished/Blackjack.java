@@ -1,6 +1,6 @@
 package nextstep.blackjack.state.finished;
 
-import nextstep.blackjack.domain.Cards;
+import nextstep.blackjack.domain.card.Cards;
 
 public class Blackjack extends Finished {
 

@@ -2,6 +2,7 @@ package nextstep.blackjack.domain;
 
 import nextstep.blackjack.constants.Denomination;
 import nextstep.blackjack.constants.Suit;
+import nextstep.blackjack.domain.card.Card;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

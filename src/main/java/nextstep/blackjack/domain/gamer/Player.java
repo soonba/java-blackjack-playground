@@ -1,4 +1,8 @@
-package nextstep.blackjack.domain;
+package nextstep.blackjack.domain.gamer;
+
+import nextstep.blackjack.domain.Money;
+import nextstep.blackjack.domain.card.Card;
+import nextstep.blackjack.domain.card.Cards;
 
 public class Player {
 

@@ -2,6 +2,8 @@ package nextstep.blackjack.domain;
 
 import nextstep.blackjack.constants.Denomination;
 import nextstep.blackjack.constants.Suit;
+import nextstep.blackjack.domain.card.Card;
+import nextstep.blackjack.domain.card.Cards;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

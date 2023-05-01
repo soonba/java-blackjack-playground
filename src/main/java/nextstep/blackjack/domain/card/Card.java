@@ -1,4 +1,4 @@
-package nextstep.blackjack.domain;
+package nextstep.blackjack.domain.card;
 
 import nextstep.blackjack.constants.Denomination;
 import nextstep.blackjack.constants.Suit;

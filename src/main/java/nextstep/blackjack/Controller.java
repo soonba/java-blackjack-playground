@@ -1,6 +1,6 @@
 package nextstep.blackjack;
 
-import nextstep.blackjack.domain.Gamers;
+import nextstep.blackjack.domain.gamer.Gamers;
 import nextstep.blackjack.view.InputView;
 import nextstep.blackjack.view.OutputView;
 
