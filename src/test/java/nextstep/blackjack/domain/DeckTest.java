@@ -10,7 +10,7 @@ public class DeckTest {
     void 덱초기화() {
         int count = 0;
         while(!Deck.isEmpty()) {
-            Deck.nextCard();
+            Deck.draw();
             count++;
         }
         Assertions.assertThat(count).isEqualTo(52);

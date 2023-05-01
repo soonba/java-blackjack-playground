@@ -18,11 +18,11 @@ public class Gamers {
     }
 
     public void initCards() {
-        dealer.addCard(Deck.nextCard());
-        dealer.addCard(Deck.nextCard());
+        dealer.addCard(Deck.draw());
+        dealer.addCard(Deck.draw());
         for (Player player : players.getPlayerList()) {
-            player.addCard(Deck.nextCard());
-            player.addCard(Deck.nextCard());
+            player.addCard(Deck.draw());
+            player.addCard(Deck.draw());
         }
     }
 

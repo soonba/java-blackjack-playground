@@ -21,7 +21,7 @@ public class Deck {
         return cardList;
     }
 
-    public static Card nextCard() {
+    public static Card draw() {
         return cardQueue.poll();
     }
 
