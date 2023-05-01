@@ -12,6 +12,7 @@ public class Player extends Gamer {
         this.bet = bet;
     }
 
+    @Override
     public String getName() {
         return name;
     }
