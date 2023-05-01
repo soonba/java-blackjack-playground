@@ -1,5 +1,7 @@
 package nextstep.blackjack.domain;
 
+import nextstep.blackjack.constants.Deck;
+
 import java.util.List;
 import java.util.stream.Collectors;
 

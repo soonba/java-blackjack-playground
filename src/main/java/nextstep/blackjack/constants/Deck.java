@@ -1,7 +1,8 @@
-package nextstep.blackjack.domain;
+package nextstep.blackjack.constants;
 
 import nextstep.blackjack.constants.Denomination;
 import nextstep.blackjack.constants.Suit;
+import nextstep.blackjack.domain.Card;
 
 import java.util.*;
 

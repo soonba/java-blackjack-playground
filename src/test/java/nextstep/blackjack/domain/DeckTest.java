@@ -1,5 +1,6 @@
 package nextstep.blackjack.domain;
 
+import nextstep.blackjack.constants.Deck;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
