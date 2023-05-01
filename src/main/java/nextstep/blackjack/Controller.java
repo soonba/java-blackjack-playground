@@ -12,13 +12,13 @@ public class Controller {
         //선수명 및 베팅금액 초기화
         Game game = initializeGame();
 
-        //첫 두 장 드로우 및 출력
+        //첫 두 장 draw 및 출력
         game.initCards();
         OutputView.initGameMessage(game.initGameMessage());
         OutputView.printAllGamerCards(game.printGamersCards());
 
-        //플레이어, 딜러
-        playerProgress(game);
+        //플레이어, 딜러 추가 프로세스
+        extraDrawProcess(game);
     }
 
     private Game initializeGame() {
@@ -31,7 +31,7 @@ public class Controller {
         }
     }
 
-    private void playerProgress(Game game) {
-
+    private void extraDrawProcess(Game game) {
+        //... controller 를 거치지 않고 도메인 내에서 I/O 로직을 구현할 수 있는지?
     }
 }
