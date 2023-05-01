@@ -19,8 +19,8 @@ public class CardsTest {
     void setUp() {
         cards = new Cards();
         cards.add(new Card(Suit.CLOVER, Denomination.KING));
-        cards.add(new Card(Suit.CLOVER, Denomination.JACK));
-        cards.add(new Card(Suit.CLOVER, Denomination.ACE));
+        cards.add(new Card(Suit.DIAMOND, Denomination.TEN));
+        cards.add(new Card(Suit.HEART, Denomination.ACE));
     }
 
     @Test
@@ -31,7 +31,7 @@ public class CardsTest {
 
     @Test
     void 문자변환() {
-        List<String> strings = cards.printCards();
-        assertThat(strings.get(1)).isEqualTo("J클로버");
+        String s = cards.printCards();
+        assertThat(s).isEqualTo("K클로버,10다이아몬드,A하트");
     }
 }
