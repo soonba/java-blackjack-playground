@@ -22,12 +22,12 @@ public abstract class Finished extends Started {
 
     @Override
     public boolean isFinished() {
-        return false;
+        return true;
     }
 
     @Override
     public double profit(double bet) {
-        return 0;
+        return earningRate() * bet;
     }
 
     public abstract double earningRate();

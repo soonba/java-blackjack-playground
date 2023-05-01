@@ -16,10 +16,7 @@ public class OutputView {
     }
 
     public static void initGameMessage(List<String> messageList) {
-
-        StringBuilder sb = new StringBuilder();
-        messageList.forEach(message -> sb.append(message).append(", "));
-        String message = sb.substring(0, sb.length() - 2);
+        String message = String.join(",", messageList);
         System.out.println("딜러와 " + message + "에게 2장의 나누었습니다.");
     }
 

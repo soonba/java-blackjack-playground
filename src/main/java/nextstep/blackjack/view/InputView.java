@@ -1,7 +1,8 @@
 package nextstep.blackjack.view;
 
+import nextstep.blackjack.domain.Money;
 import nextstep.blackjack.domain.gamer.Dealer;
-import nextstep.blackjack.domain.gamer.Gamers;
+import nextstep.blackjack.domain.Game;
 import nextstep.blackjack.domain.gamer.Player;
 import nextstep.blackjack.domain.gamer.Players;
 
@@ -14,14 +15,14 @@ public class InputView {
 
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-    public static Gamers initPlayer() throws Exception {
+    public static Game initPlayerAndBets() throws Exception {
         String[] split = br.readLine().split(",");
         List<Player> playerList = new ArrayList<>();
         for (String s : split) {
             OutputView.initBet(s);
             int bet = Integer.parseInt(br.readLine());
-            playerList.add(new Player(s, bet));
+            playerList.add(new Player(s, new Money(bet)));
         }
-        return new Gamers(new Dealer(), new Players(playerList));
+        return new Game(new Dealer(), new Players(playerList));
     }
 }

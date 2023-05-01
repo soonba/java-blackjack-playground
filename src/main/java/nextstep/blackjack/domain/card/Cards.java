@@ -15,7 +15,8 @@ public class Cards {
         cards.add(card);
     }
 
-    public List<String> printCards() {
-        return cards.stream().map(Card::getString).collect(Collectors.toList());
+    public String printCards() {
+        List<String> collect = cards.stream().map(Card::getString).collect(Collectors.toList());
+        return String.join(",",collect);
     }
 }

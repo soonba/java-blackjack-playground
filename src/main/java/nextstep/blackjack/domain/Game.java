@@ -1,15 +1,17 @@
-package nextstep.blackjack.domain.gamer;
+package nextstep.blackjack.domain;
 
-import nextstep.blackjack.constants.Deck;
+import nextstep.blackjack.domain.gamer.Dealer;
+import nextstep.blackjack.domain.gamer.Player;
+import nextstep.blackjack.domain.gamer.Players;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Gamers {
+public class Game {
     private final Dealer dealer;
     private final Players players;
 
-    public Gamers(Dealer dealer,Players players) {
+    public Game(Dealer dealer, Players players) {
         this.dealer = dealer;
         this.players = players;
     }
@@ -20,22 +22,30 @@ public class Gamers {
     }
 
     public void initCards() {
-        dealer.addCard(Deck.draw());
-        dealer.addCard(Deck.draw());
+        dealer.addCard();
+        dealer.addCard();
         for (Player player : players.getPlayerList()) {
-            player.addCard(Deck.draw());
-            player.addCard(Deck.draw());
+            player.addCard();
+            player.addCard();
         }
     }
 
     public List<String> printGamersCards() {
         String printDealer = dealer.printCards();
         List<String> collect = players.getPlayerList().stream().map(Player::printCards).collect(Collectors.toList());
-        collect.add(0,printDealer);
+        collect.add(0, printDealer);
         return collect;
     }
 
     public boolean isAnyBlackjack() {
         return true;
+    }
+
+    public boolean isEnd() {
+        return true;
+    }
+
+    public void play() {
+
     }
 }
