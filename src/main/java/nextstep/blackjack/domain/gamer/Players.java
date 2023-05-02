@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Players {
 
-    List<Player> playerList;
+    private final List<Player> playerList;
 
     public Players(List<Player> playerList) {
         this.playerList = playerList;

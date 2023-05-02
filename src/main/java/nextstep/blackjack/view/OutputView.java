@@ -20,9 +20,19 @@ public class OutputView {
         System.out.println("딜러와 " + message + "에게 2장의 나누었습니다.");
     }
 
-    public static void printAllGamerCards(List<String> messages) {
+    public static void printListMessage(List<String> messages) {
         StringBuilder sb = new StringBuilder();
+        System.out.println();
         messages.forEach(message -> sb.append(message).append("\n"));
         System.out.println(sb);
+    }
+
+    public static void printMessage(String message) {
+        System.out.println();
+        System.out.println(message);
+    }
+
+    public static void dealerDrawMessage() {
+        System.out.println("딜러는 16이하라 한장의 카드를 더 받았습니다.");
     }
 }

@@ -1,8 +1,12 @@
 package nextstep.blackjack;
 
 import nextstep.blackjack.domain.Game;
+import nextstep.blackjack.domain.gamer.Dealer;
+import nextstep.blackjack.domain.gamer.Player;
 import nextstep.blackjack.view.InputView;
 import nextstep.blackjack.view.OutputView;
+
+import java.util.List;
 
 public class Controller {
 
@@ -15,7 +19,7 @@ public class Controller {
         //첫 두 장 draw 및 출력
         game.initCards();
         OutputView.initGameMessage(game.initGameMessage());
-        OutputView.printAllGamerCards(game.printGamersCards());
+        OutputView.printListMessage(game.printGamersCards());
 
         //플레이어, 딜러 추가 프로세스
         extraDrawProcess(game);
@@ -32,6 +36,27 @@ public class Controller {
     }
 
     private void extraDrawProcess(Game game) {
-        //... controller 를 거치지 않고 도메인 내에서 I/O 로직을 구현할 수 있는지?
+        List<Player> playerList = game.getPlayers().getPlayerList();
+        playerList.stream()
+                .filter(player -> !player.isFinished())
+                .forEach(this::drawUntilStop);
+
+        Dealer dealer = game.getDealer();
+        drawUntilSixteen(dealer);
+    }
+
+    private void drawUntilStop(Player player) {
+        while (!player.isFinished() && InputView.wantToDraw(player.getName())) {
+            player.addCard();
+            OutputView.printMessage(player.printCards());
+        }
+    }
+
+    private void drawUntilSixteen(Dealer dealer) {
+        while (!dealer.isFinished()) {
+            OutputView.dealerDrawMessage();
+            dealer.addCard();
+            OutputView.printMessage(dealer.printCards());
+        }
     }
 }

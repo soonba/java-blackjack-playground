@@ -37,6 +37,10 @@ public class Game {
         return collect;
     }
 
+    public Players getPlayers() {
+        return players;
+    }
+
     public boolean isAnyBlackjack() {
         return true;
     }
@@ -47,5 +51,9 @@ public class Game {
 
     public void play() {
 
+    }
+
+    public Dealer getDealer() {
+        return this.dealer;
     }
 }
