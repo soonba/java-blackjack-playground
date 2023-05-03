@@ -1,5 +1,6 @@
 package nextstep.blackjack.domain;
 
+import nextstep.blackjack.constants.PrintCardsType;
 import nextstep.blackjack.domain.gamer.Dealer;
 import nextstep.blackjack.domain.gamer.Player;
 import nextstep.blackjack.domain.gamer.Players;
@@ -31,12 +32,11 @@ public class Game {
     }
 
     public List<String> printGamersCards() {
-        String printDealer = dealer.printCards();
-        List<String> collect = players.getPlayerList().stream().map(Player::printCards).collect(Collectors.toList());
+        String printDealer = dealer.printCards(PrintCardsType.DEFAULT);
+        List<String> collect = players.getPlayerList().stream().map(player -> player.printCards(PrintCardsType.DEFAULT)).collect(Collectors.toList());
         collect.add(0, printDealer);
         return collect;
     }
-
     public Players getPlayers() {
         return players;
     }

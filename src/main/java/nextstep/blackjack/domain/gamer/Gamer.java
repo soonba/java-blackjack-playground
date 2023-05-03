@@ -1,6 +1,7 @@
 package nextstep.blackjack.domain.gamer;
 
 import nextstep.blackjack.constants.Deck;
+import nextstep.blackjack.constants.PrintCardsType;
 import nextstep.blackjack.domain.card.Cards;
 import nextstep.blackjack.state.State;
 import nextstep.blackjack.state.running.Hit;
@@ -22,10 +23,10 @@ public abstract class Gamer {
         state = state.draw(Deck.draw());
     }
 
-    public String printCards() {
+    public String printCards(PrintCardsType printCardsType) {
         return getName() +
                 PRINT_JOIN_MESSAGE +
-                state.cards().printCards();
+                state.cards().printCards(printCardsType);
     }
 
     public abstract String getName();

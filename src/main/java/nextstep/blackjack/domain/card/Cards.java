@@ -1,5 +1,7 @@
 package nextstep.blackjack.domain.card;
 
+import nextstep.blackjack.constants.PrintCardsType;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,9 +18,10 @@ public class Cards {
         cards.add(card);
     }
 
-    public String printCards() {
+    public String printCards(PrintCardsType printCardsType) {
         List<String> collect = cards.stream().map(Card::getString).collect(Collectors.toList());
-        return String.join(",",collect);
+        String join = String.join(",", collect);
+        return printCardsType.addString(join, this.getScore());
     }
 
     public boolean isBust() {
