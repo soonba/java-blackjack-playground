@@ -16,7 +16,7 @@ public class Dealer extends Gamer {
 
     @Override
     public boolean isFinished() {
-        return (super.isFinished() && this.continueByRule());
+        return (super.isFinished() || this.continueByRule());
     }
 
     private boolean continueByRule() {
