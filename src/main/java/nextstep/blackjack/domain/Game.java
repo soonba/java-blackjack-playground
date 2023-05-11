@@ -56,4 +56,9 @@ public class Game {
     public Dealer getDealer() {
         return this.dealer;
     }
+
+    public Profits getProfits() {
+        players.getPlayerList().stream()
+                .filter(player ->player.getEarningRate())
+    }
 }

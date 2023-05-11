@@ -5,6 +5,7 @@ import nextstep.blackjack.domain.card.Cards;
 import nextstep.blackjack.state.State;
 import nextstep.blackjack.state.finished.Blackjack;
 import nextstep.blackjack.state.finished.Bust;
+import nextstep.blackjack.state.finished.Stay;
 
 public class Hit extends Running {
 
@@ -26,6 +27,6 @@ public class Hit extends Running {
 
     @Override
     public State stay() {
-        return null;
+        return new Stay(cards);
     }
 }

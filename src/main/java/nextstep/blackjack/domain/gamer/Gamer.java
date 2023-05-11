@@ -23,6 +23,10 @@ public abstract class Gamer {
         state = state.draw(Deck.draw());
     }
 
+    public void stay() {
+        state = state.stay();
+    }
+
     public String printCards(PrintCardsType printCardsType) {
         return getName() +
                 PRINT_JOIN_MESSAGE +

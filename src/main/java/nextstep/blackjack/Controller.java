@@ -2,6 +2,7 @@ package nextstep.blackjack;
 
 import nextstep.blackjack.constants.PrintCardsType;
 import nextstep.blackjack.domain.Game;
+import nextstep.blackjack.domain.Profits;
 import nextstep.blackjack.domain.gamer.Dealer;
 import nextstep.blackjack.domain.gamer.Player;
 import nextstep.blackjack.view.InputView;
@@ -29,7 +30,7 @@ public class Controller {
         OutputView.printListMessage(game.printGamersCards(PrintCardsType.ADD_RESULT));
 
         //profit 계산
-//        Profits profits = game.getProfits();
+        Profits profits = game.getProfits();
     }
 
     private Game initializeGame() {
@@ -57,6 +58,9 @@ public class Controller {
             player.addCard();
             OutputView.printMessage(player.printCards(PrintCardsType.DEFAULT));
         }
+
+        // n을 입력해 나왔다면 stay
+        if(!player.isFinished()) player.stay();
     }
 
     private void drawUntilSixteen(Dealer dealer) {
