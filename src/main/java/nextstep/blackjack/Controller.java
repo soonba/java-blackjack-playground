@@ -1,5 +1,6 @@
 package nextstep.blackjack;
 
+import nextstep.blackjack.constants.PrintCardsType;
 import nextstep.blackjack.domain.Game;
 import nextstep.blackjack.domain.gamer.Dealer;
 import nextstep.blackjack.domain.gamer.Player;
@@ -19,10 +20,16 @@ public class Controller {
         //첫 두 장 draw 및 출력
         game.initCards();
         OutputView.initGameMessage(game.initGameMessage());
-        OutputView.printListMessage(game.printGamersCards());
+        OutputView.printListMessage(game.printGamersCards(PrintCardsType.DEFAULT));
 
         //플레이어, 딜러 추가 프로세스
         extraDrawProcess(game);
+
+        //결과 출력
+        OutputView.printListMessage(game.printGamersCards(PrintCardsType.ADD_RESULT));
+
+        //profit 계산
+//        Profits profits = game.getProfits();
     }
 
     private Game initializeGame() {
@@ -48,7 +55,7 @@ public class Controller {
     private void drawUntilStop(Player player) {
         while (!player.isFinished() && InputView.wantToDraw(player.getName())) {
             player.addCard();
-            OutputView.printMessage(player.printCards());
+            OutputView.printMessage(player.printCards(PrintCardsType.DEFAULT));
         }
     }
 
@@ -56,7 +63,6 @@ public class Controller {
         while (!dealer.isFinished()) {
             OutputView.dealerDrawMessage();
             dealer.addCard();
-            OutputView.printMessage(dealer.printCards());
         }
     }
 }

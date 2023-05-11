@@ -31,9 +31,9 @@ public class Game {
         }
     }
 
-    public List<String> printGamersCards() {
-        String printDealer = dealer.printCards(PrintCardsType.DEFAULT);
-        List<String> collect = players.getPlayerList().stream().map(player -> player.printCards(PrintCardsType.DEFAULT)).collect(Collectors.toList());
+    public List<String> printGamersCards(PrintCardsType printCardsType) {
+        String printDealer = dealer.printCards(printCardsType);
+        List<String> collect = players.getPlayerList().stream().map(player -> player.printCards(printCardsType)).collect(Collectors.toList());
         collect.add(0, printDealer);
         return collect;
     }
