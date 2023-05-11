@@ -25,7 +25,7 @@ public class CardsTest {
     @Test
     void 카드스코어() {
         int score = cards.getScore();
-        assertThat(score).isEqualTo(31);
+        assertThat(score).isEqualTo(21);
     }
 
     @Test
@@ -37,7 +37,7 @@ public class CardsTest {
     @Test
     void 결과담긴문자변환() {
         String s = cards.printCards(PrintCardsType.ADD_RESULT);
-        assertThat(s).isEqualTo("K클로버,10다이아몬드,A하트 - 결과:11");
+        assertThat(s).isEqualTo("K클로버,10다이아몬드,A하트 - 결과: 21");
     }
 
     @Test
