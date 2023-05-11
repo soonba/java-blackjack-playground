@@ -39,4 +39,18 @@ public class CardsTest {
         String s = cards.printCards(PrintCardsType.ADD_RESULT);
         assertThat(s).isEqualTo("K클로버,10다이아몬드,A하트 - 결과:11");
     }
+
+    @Test
+    void bust_테스트() {
+        Cards cards1 = new Cards();
+        cards1.add(new Card(Suit.CLOVER, Denomination.ACE));
+        assertThat(cards1.getScore()).isEqualTo(11);
+        cards1.add(new Card(Suit.HEART, Denomination.ACE));
+        assertThat(cards1.getScore()).isEqualTo(12);
+        cards1.add(new Card(Suit.DIAMOND, Denomination.ACE));
+        assertThat(cards1.getScore()).isEqualTo(13);
+        cards1.add(new Card(Suit.SPADE, Denomination.ACE));
+        assertThat(cards1.getScore()).isEqualTo(14);
+
+    }
 }

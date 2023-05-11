@@ -9,9 +9,13 @@ import java.util.stream.Collectors;
 public class Cards {
     private final List<Card> cards = new ArrayList<>();
     public static final int BLACKJACK_BOUND = 21;
+    public static final int ACE_CORRECTION = 10;
 
     public int getScore() {
-        return cards.stream().mapToInt(Card::getScore).sum();
+        int sum = cards.stream()
+                .mapToInt(Card::getScore)
+                .sum();
+        return sum - aceCorrection(sum);
     }
 
     public void add(Card card) {
@@ -25,14 +29,21 @@ public class Cards {
     }
 
     public boolean isBust() {
-        return cards.stream()
-                .mapToInt(Card::getScore)
-                .sum() > BLACKJACK_BOUND;
+        return this.getScore() > BLACKJACK_BOUND;
     }
 
     public boolean isBlackjack() {
-        return cards.stream()
-                .mapToInt(Card::getScore)
-                .sum() == BLACKJACK_BOUND;
+        return this.getScore() == BLACKJACK_BOUND;
+    }
+
+    private int aceCorrection(int originScore) {
+        if(originScore <= BLACKJACK_BOUND) return 0;
+        int aceCount = (int) cards.stream().filter(Card::isAce).count();
+        int minCountUnderBound = getMinCountUnderBound(originScore);
+        return Math.min(aceCount,minCountUnderBound) * ACE_CORRECTION;
+    }
+
+    private int getMinCountUnderBound(int originScore) {
+        return ((originScore + 9 - BLACKJACK_BOUND) / 10);
     }
 }
