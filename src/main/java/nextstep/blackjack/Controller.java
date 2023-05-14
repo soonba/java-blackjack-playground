@@ -31,6 +31,8 @@ public class Controller {
 
         //profit 계산
         Profits profits = game.getProfits();
+        OutputView.printListMessage(profits.printProfits());
+
     }
 
     private Game initializeGame() {

@@ -35,4 +35,12 @@ public abstract class Gamer {
 
     public abstract String getName();
 
+    public boolean scoreComparable() {
+        return !(state.cards().isBust() || state.cards().isBlackjack());
+    }
+
+    public int getScore() {
+        return state.cards().getScore();
+    }
+
 }
