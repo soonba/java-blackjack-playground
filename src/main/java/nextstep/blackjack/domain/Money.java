@@ -15,12 +15,12 @@ public class Money {
         return new Money();
     }
 
-    public Money increment(Money incrementValue) {
+    public Money add(Money incrementValue) {
         return new Money(value+incrementValue.getValue());
     }
 
-    public Money decrement(Money decrementValue) {
-        return new Money(value-decrementValue.getValue());
+    public Money negative() {
+        return new Money(-1 * value);
     }
 
     public int getValue() {

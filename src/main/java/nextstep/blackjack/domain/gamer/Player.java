@@ -16,4 +16,8 @@ public class Player extends Gamer {
     public String getName() {
         return name;
     }
+
+    public Money getProfitMoney() {
+        return state.profit(bet);
+    }
 }
