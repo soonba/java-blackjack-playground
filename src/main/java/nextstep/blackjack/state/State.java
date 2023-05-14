@@ -1,5 +1,6 @@
 package nextstep.blackjack.state;
 
+import nextstep.blackjack.domain.Money;
 import nextstep.blackjack.domain.card.Card;
 import nextstep.blackjack.domain.card.Cards;
 
@@ -8,5 +9,5 @@ public interface State {
     State stay();
     boolean isFinished();
     Cards cards();
-    double profit(double bet);
+    Money profit(Money bet);
 }

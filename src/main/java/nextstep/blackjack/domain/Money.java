@@ -1,13 +1,13 @@
 package nextstep.blackjack.domain;
 
 public class Money {
-    private final int value;
+    private final double value;
 
     public Money() {
         value = 0;
     }
 
-    public Money(int value) {
+    public Money(double value) {
         this.value = value;
     }
 
@@ -24,6 +24,6 @@ public class Money {
     }
 
     public int getValue() {
-        return value;
+        return (int)value;
     }
 }
