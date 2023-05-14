@@ -1,5 +1,6 @@
 package nextstep.blackjack.state.running;
 
+import nextstep.blackjack.domain.Money;
 import nextstep.blackjack.domain.card.Cards;
 import nextstep.blackjack.state.Started;
 
@@ -13,7 +14,7 @@ public abstract class Running extends Started {
     }
 
     @Override
-    public double profit(double bet) {
+    public Money profit(Money bet) {
         throw new IllegalStateException();
     }
 }

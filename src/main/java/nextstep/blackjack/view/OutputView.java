@@ -23,6 +23,7 @@ public class OutputView {
     public static void printListMessage(List<String> messages) {
         StringBuilder sb = new StringBuilder();
         System.out.println();
+        sb.append("## 최종 수익").append("\n");
         messages.forEach(message -> sb.append(message).append("\n"));
         System.out.println(sb);
     }
