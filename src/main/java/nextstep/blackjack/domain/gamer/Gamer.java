@@ -23,6 +23,10 @@ public abstract class Gamer {
         state = state.draw(Deck.draw());
     }
 
+    public void stay() {
+        state = state.stay();
+    }
+
     public String printCards(PrintCardsType printCardsType) {
         return getName() +
                 PRINT_JOIN_MESSAGE +
@@ -30,5 +34,13 @@ public abstract class Gamer {
     }
 
     public abstract String getName();
+
+    public boolean scoreComparable() {
+        return !(state.cards().isBust() || state.cards().isBlackjack());
+    }
+
+    public int getScore() {
+        return state.cards().getScore();
+    }
 
 }

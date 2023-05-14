@@ -9,7 +9,7 @@ public class Bust extends Finished {
 
     @Override
     public double earningRate() {
-        return 0;
+        return -1;
     }
 
 }

@@ -33,7 +33,7 @@ public class Cards {
     }
 
     public boolean isBlackjack() {
-        return this.getScore() == BLACKJACK_BOUND;
+        return this.getScore() == BLACKJACK_BOUND && cards.size() == 2;
     }
 
     private int aceCorrection(int originScore) {

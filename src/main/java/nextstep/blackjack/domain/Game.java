@@ -37,23 +37,30 @@ public class Game {
         collect.add(0, printDealer);
         return collect;
     }
+
     public Players getPlayers() {
         return players;
     }
 
-    public boolean isAnyBlackjack() {
-        return true;
-    }
-
-    public boolean isEnd() {
-        return true;
-    }
-
-    public void play() {
-
-    }
-
     public Dealer getDealer() {
         return this.dealer;
+    }
+
+    public Profits getProfits() {
+        Profits profits = new Profits();
+        players.getPlayerList()
+                .forEach(player -> updateProfits(player, profits));
+        return profits;
+    }
+
+    private void updateProfits(Player player, Profits profits) {
+        if(!player.scoreComparable() || player.getScore() > dealer.getScore()) {
+            profits.playerUpdateProfit(player.getName(),player.getProfitMoney());
+            profits.dealerUpdateProfit(player.getProfitMoney().negative());
+            return;
+        }
+
+        profits.playerUpdateProfit(player.getName(), player.getProfitMoney().negative());
+        profits.dealerUpdateProfit(player.getProfitMoney());
     }
 }

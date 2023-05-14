@@ -1,5 +1,6 @@
 package nextstep.blackjack.state.finished;
 
+import nextstep.blackjack.domain.Money;
 import nextstep.blackjack.domain.card.Card;
 import nextstep.blackjack.domain.card.Cards;
 import nextstep.blackjack.state.Started;
@@ -26,8 +27,8 @@ public abstract class Finished extends Started {
     }
 
     @Override
-    public double profit(double bet) {
-        return earningRate() * bet;
+    public Money profit(Money bet) {
+        return new Money(earningRate() * bet.getValue());
     }
 
     public abstract double earningRate();
